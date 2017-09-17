@@ -14,16 +14,20 @@ defmodule DynamicEctoQuery.Mixfile do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
+      mod: {DynamicEctoQueryApp, []},
       extra_applications: [:logger]
     ]
   end
+
+  defp elixirc_paths(_), do: ~w(lib)
 
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
       {:ecto, "~> 2.2"},
       {:ex_machina, "~> 2.1"},
-      {:faker, "~> 0.9.0"}
+      {:faker, "~> 0.9.0"},
+      {:postgrex, ">= 0.0.0"}
     ]
   end
 end

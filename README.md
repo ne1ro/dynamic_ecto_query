@@ -6,7 +6,9 @@ Related to my article on [website](https://neiro.io/2017/09/16/building-dynamic-
 ## Installation
 
 ```
-brew install elixir && mix do local.hex, deps.get, compile && iex -S mix
+brew install elixir &&
+mix do local.hex, deps.get, compile, ecto.create, ecto.migrate &&
+iex -S mix
 ```
 
 Create by **neiro** 👹 © 2017
