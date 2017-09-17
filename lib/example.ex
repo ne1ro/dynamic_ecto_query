@@ -11,11 +11,11 @@ defmodule Example do
   def run do
     insert_users()
 
-    IO.inspect(count([]))
-    [relationships_status: ["married"]] |> count([]) |> IO.inspect
-    [proficiency: ["developer"]] |> count([]) |> IO.inspect
-    [proficiency: ["soldier"]] |> count([]) |> IO.inspect
-    IO.inspect(count([], %{proficiency: ["politic"]}))
+    IO.inspect(count([])) # 3
+    [relationships_status: ["married"]] |> count([]) |> IO.inspect # 3
+    [proficiency: ["developer"]] |> count([]) |> IO.inspect # 1
+    [proficiency: ["soldier"]] |> count([]) |> IO.inspect # 0
+    IO.inspect(count([], %{proficiency: ["politic"]})) # 2
   end
 
   defp insert_users do
